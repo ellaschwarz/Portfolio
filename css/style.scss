@@ -1,3 +1,50 @@
+$body-bg: #65B7CC;
+$positions: sticky;
+$btn-border-radius: 20px;
+$primary: #F6F8F9;
+$font-family-sans-serif: 'Poppins', sans-serif;
+$displays: none;
+
+
+
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
+
+@import "../node_modules/bootstrap/scss/navbar";
+@import "../node_modules/bootstrap/scss/card";
+@import "../node_modules/bootstrap/scss/jumbotron";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/nav";
+@import "../node_modules/bootstrap/scss/images";
+
+* {
+font-family: $font-family-sans-serif;
+}
+
+body {
+    background-color: $body-bg;
+    // background-color: $body-color;
+}
+
+header {
+ height: 100vh;
+
+}
+
+nav {
+    position: $positions;
+}
+
+a {
+    border-radius: $btn-border-radius;
+
+}
+
+#projects{
+    height: 100vh; 
+}
+
+#cv {
+    display: $displays;
+}
