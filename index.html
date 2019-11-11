@@ -9,182 +9,212 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/scss/styles.css">
     <script src="https://kit.fontawesome.com/3a12e18fd4.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <title>Hello, world!</title>
 </head>
 
 <body>
     <div class="page_container">
-        <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top" id="mainNav">
+        <nav class="hero navbar navbar-expand-lg navbar-light navbar-fixed-top" id="mainNav">
             <div class="container">
+
+                <select name="language" id="language_selector">
+                <option value="en">English</option>
+                <option value="sv">Svenska</option>
+            </select>
+
                 <a class="navbar-brand js-scroll-trigger" href="#page-top"><button
-                        class="fab fa-linkedin-in"></button><button class="fab fa-github"></button></a>
+                        class="fab fa-linkedin-in"></button><button class="fab fa-github"
+                        href="https://github.com/ellaschwarz"></button></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                     data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                     aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
+                
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                            <a class="nav-link js-scroll-trigger" id="about_button" href="#about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
+                            <a class="nav-link js-scroll-trigger" id="projects_button" href="#projects">Projects</a>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link js-scroll-trigger" id="resume" href="#cv">Resume</a>
-                            </li>
+                            <a class="nav-link js-scroll-trigger" id="resume" href="#cv">Resume</a>
+                        </li>
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                            <a class="nav-link js-scroll-trigger" id="contact_button" href="#contact">Contact</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <div class="landing_page_container">
-
-            <!-- Header -->
-            <header class="masthead">
-                <div class="container d-flex align-items-center">
-                    <div class="mx-auto text-center">
-                        <img class="image float-right" width="500" height="500" src="https://image.freepik.com/vector-gratis/diseno-fondo-programacion_1223-79.jpg"
-                            class="img-fluid rounded float-right" alt="Responsive image">
-                            <div class="header_text float-left">
-                        <h1 class="mx-auto my-0 text-uppercase">Ella Schwarz</h1>
-                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Fullstack Web Developer Student</h2>
-                        <a href="#about" class="btn btn-primary js-scroll-trigger">PROJECTS</a>
-                    </div>
-                    </div>
-                </div>
-            </header>
+        
+        <div class="cv_container d-flex h-100 align-items-center justify-content-center">
+            <h1 id="resume_h1">Resume</h1> <br>
+                <embed src="/images/Ella_Schwarz CV_English (kopia).pdf" width="800" height="850" alt="pdf" id="cv_pdf"
+                    pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
         </div>
 
-        <div class="jumbotron jumbotron-fluid" id="about">
-            <div class="container d-flex h-100 align-items-center">
-                <img src="/images/profilepic.jpg" class="img-fluid" alt="Responsive image">
-                <div class="text_container">
-                <h1 class="display-4">Who am I?</h1>
-                <p class="lead">I am a Fullstack Web Developer Student with a B.sc. in Business Administration and Economics. I am truly passionate about innovation,
-                        tech and business. By becoming a
-                        great developer, I hope to contribute
-                        to the innovation of tomorrow. I am
-                        always looking for new knowledge to
-                        keep growing, both as an individual
-                        and as an employee. If there is
-                        anything I don’t know, I’m not afraid to
-                        learn. Therefore, I am now searching
-                        for an internship where I can both
-                        learn from and contribute to the
-                        current technology</p>
+        <div class="main_content">
+
+            <div class="hero landing_page_container">
+                <!-- Header -->
+                <header class="hero masthead d-flex align-items-center">
+                    <div class="hero container">
+                        <div class="hero-mx-auto text-center">
+                            <div class="hero-header_text float-left">
+                                <h1 class="hero-mx-auto my-0 text-uppercase display-1" id="name"> Ella Schwarz</h1>
+                                <h2 class="hero-text-white-50 mx-auto mt-2 mb-5">Fullstack Web Developer Student</h2>
+                                <a href="#about" class="hero btn btn-primary js-scroll-trigger" id="projects_btn">PROJECTS</a>
+                            </div>
+                        </div>
                     </div>
+                </header>
+
+
+                <div class="jumbotron jumbotron-fluid" id="about">
+                    <div class="container d-flex align-items-center flex-column">
+                        <!-- <div class="w-100"></div> -->
+                        <div class="text-center">
+                            <img src="/images/profilepic.jpg" class="img-fluid col-md-2" width="30" height="30"
+                                lt="Responsive image">
+                        </div>
+                        <!-- <div class="w-100"></div> -->
+                        <div class="text_container col-md-8">
+                            <h1 class="display-4">Who am I?</h1>
+                            <p class="lead">I am a Fullstack Web Developer Student with a B.sc. in Business
+                                Administration
+                                and
+                                Economics. I am truly passionate about innovation,
+                                tech and business. By becoming a
+                                great developer, I hope to contribute
+                                to the innovation of tomorrow. I am
+                                always looking for new knowledge to
+                                keep growing, both as an individual
+                                and as an employee. If there is
+                                anything I don’t know, I’m not afraid to
+                                learn. Therefore, I am now searching
+                                for an internship where I can both
+                                learn from and contribute to the
+                                current technology.</p>
+                        </div> <br>
+
+                        <!-- <div class=" row w-100"></div> <br> -->
+                        <a href="#cv" class="btn btn-primary js-scroll-trigger col-md-4" id="resume_btn">RESUME</a>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="portfolio_container" id="projects">
+                <h1 class="display-4">My projects</h1>
+                <div class="card-deck d-flex h-100 align-items-center">
+                    <div class="card">
+                        <img class="card-img-top" src="/images/CRM/Skärmavbild 2019-11-06 kl. 12.53.28.png"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">CRM-system</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="/images/Quiz/Skärmavbild 2019-11-06 kl. 12.58.35.png"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Quiz</h5>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional
+                                content.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="/images/Nim/Skärmavbild 2019-11-06 kl. 13.05.19.png"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Nim-game</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This card has even longer content than the first to show that equal
+                                height action.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-    </div>
-    <div class="portfolio_container" id="projects">
-        <div class="card-deck d-flex h-100 align-items-center">
-            <div class="card">
-                <img class="card-img-top" src="/images/CRM/Skärmavbild 2019-11-06 kl. 12.53.28.png"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">CRM-system</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="/images/Quiz/Skärmavbild 2019-11-06 kl. 12.58.35.png"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Quiz</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                        content.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="/images/Nim/Skärmavbild 2019-11-06 kl. 13.05.19.png"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Nim-game</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to show that equal
-                        height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-        </div>
+        <div class="contact_container" id="contact">
 
-    </div>
+            <section class="contact-section bg-black d-flex align-items-center">
+                <div class="container">
 
-    <div class="contact_container" id="contact">
-        <!-- Contact Section -->
-        <section class="contact-section bg-black">
-            <div class="container">
+                    <div class="row">
 
-                <div class="row">
-
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-envelope text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Email</h4>
-                                <hr class="my-4">
-                                <div class="small text-black-50">
-                                    <a href="#">ellaschwarzt@gmail.com</a>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-envelope text-primary mb-2"></i>
+                                    <h4 class="text-uppercase m-0">Email</h4>
+                                    <hr class="my-4">
+                                    <div class="small text-black-50">
+                                        <a href="#">ellaschwarzt@gmail.com</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Phone</h4>
-                                <hr class="my-4">
-                                <div class="small text-black-50">+46 703 93 12 41</div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                    <h4 class="text-uppercase m-0">Phone</h4>
+                                    <hr class="my-4">
+                                    <div class="small text-black-50">+46 703 93 12 41</div>
+                                </div>
                             </div>
                         </div>
+
+
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                    <h4 class="text-uppercase m-0">Address</h4>
+                                    <hr class="my-4">
+                                    <div class="small text-black-50">Gamla Huddingevägen 444, 125 42 Älvsjö, Stockholm,
+                                        Sweden</div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
 
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Address</h4>
-                                <hr class="my-4">
-                                <div class="small text-black-50">Gamla Huddingevägen 444, 125 42 Älvsjö, Stockholm,
-                                    Sweden</div>
-                            </div>
-                        </div>
+                    <div class="social d-flex justify-content-center">
+                        <a href="#" class="mx-2">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/ellaschwarz" class="mx-2">
+                            <i class="fab fa-github"></i>
+                        </a>
                     </div>
 
                 </div>
-
-
-                <div class="social d-flex justify-content-center">
-                    <a href="#" class="mx-2">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="mx-2">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-
-            </div>
-        </section>
-    </div>
-    <div class="cv_container d-flex h-100 align-items-center invisible" id="cv">
-            <embed src="/images/Ella_Schwarz CV_English (kopia).pdf" width="800" height="700" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+            </section>
+        </div>
     </div>
     </div>
 
