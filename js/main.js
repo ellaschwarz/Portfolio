@@ -85,9 +85,4 @@ $(document).ready(function(){
                 });    
     });
 
-
-    // $(document).ready(function(){
-    //     $("#resume").click(function(){
-    //        $("#cv_pdf").toggle();
-    //        });
-    //     });
+   

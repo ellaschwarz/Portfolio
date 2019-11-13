@@ -20,6 +20,10 @@ $btn-padding-x: 10%;
 @import "../node_modules/bootstrap/scss/images";
 @import "../node_modules/bootstrap/scss/code";
 @import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/carousel";
+@import "../node_modules/bootstrap/scss/navbar";
+
+
 
 
 $grid-breakpoints: (
@@ -85,20 +89,14 @@ body {
 
 header {
   height: 100vh;
-  //  background: url('/images/clement-h-95YRwf6CNw8-unsplash.jpg') repeat;
-  //  &:before {
-  //    content: '';
-  //    position: absolute;
-  //    top: 0;
-  //    left: 0;
-  //    right: 0;
-  //    bottom: 0;
-  //    background: rgba(216, 241, 248, 0.7);
-  //  }
 }
 
-nav {
-  position: $positions;
+#navbarResponsive {
+  position: sticky;
+  position: -webkit-sticky;
+  color: $border-color;
+  font-size: 23px;
+  height: 10%;
 }
 
 #resume_btn, #projects_btn {
@@ -142,7 +140,7 @@ h2 {
   }
 }
 
-#cv_pdf {
+#cv_pdf, .contact_container {
   margin: 5vh;
 }
 
@@ -172,5 +170,6 @@ h2 {
 // Option B: Include parts of Bootstrap
 
 // Required
+
 
 
