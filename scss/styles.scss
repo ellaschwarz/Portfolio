@@ -158,6 +158,7 @@ header {
     color: $secondary;
     border-color: $secondary;
     background: $body-bg;
+    text-shadow: none;
   }
 }
 
@@ -202,12 +203,16 @@ h2 {
   }
 }
 
+h1 {
+  text-shadow: $text-shadow;
+}
+
 h1,
 h3,
 h5 {
-  font-family: $font-family-sans-serif;
-  text-shadow: $text-shadow;
+  font-family: $font-family-sans-serif; 
 }
+
 
 .img-fluid {
   border-radius: 50%;
