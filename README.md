@@ -2,15 +2,11 @@
 
 Tillgänglighet:
 
-
-
-Use of color
-
 1.4.1 Use of Color
 På sidan finns inget innehåll som endbart skiljs åt med färg. Knappar har text, rubiker är stora och jag har unvikit färgerna grön, brun och röd då dessa är svåra att urskilja för en person med färgblindhet. 
 
 1.1.1 Non-text Content
-Alla bilder har både en förklaring i alt="" men även i title="" så att förklaringen även syns om man håller musen över.
+Alla bilder har både en förklaring i alt="" men även i title="" så att förklaringen syns om bilden inte laddas samt om man håller musen över.
 
 1.4.12 Text Spacing
 All text har:

@@ -1,21 +1,20 @@
-$body-bg: #65b7cc;
+$body-bg: #f6f8f9;
 $positions: sticky;
 $btn-border-radius: 40px;
 $primary: #f96332;
+$secondary: rgb(82, 200, 206);
 $border-color: #f6f8f9;
-$font-family-sans-serif: 'Raleway', sans-serif;
+$font-family-sans-serif: "Raleway", sans-serif;
 $displays: none;
 $grid-columns: 12;
 $grid-gutter-width: 30px;
-$btn-padding-y: 5%;
-$btn-padding-x: 10%;
+$btn-padding-y: 15%;
+$btn-padding-x: 15%;
 $card-columns-margin: 20px;
 $font-family-base: "Poppins", sans-serif;
 $jumbotron-padding: 1rem;
-
-// $navbar-light-color:       
-// $navbar-light-hover-color: 
-// $navbar-light-active-color:
+$navbar-light-color: white;
+$text-shadow: 1px 2px 2px rgba(53, 53, 75, 0.863);
 
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
@@ -31,28 +30,9 @@ $jumbotron-padding: 1rem;
 @import "../node_modules/bootstrap/scss/navbar";
 @import "../node_modules/bootstrap/scss/card";
 
-
-
-
-// $grid-breakpoints: (
-//   // Extra small screen / phone
-//   xs: 0,
-//   // Small screen / phone
-//   sm: 576px,
-//   // Medium screen / tablet
-//   md: 768px,
-//   // Large screen / desktop
-//   lg: 992px,
-//   // Extra large screen / wide desktop
-//   xl: 1200px
-// );
-
-// $container-max-widths: (
-//   sm: 540px,
-//   md: 720px,
-//   lg: 960px,
-//   xl: 1140px
-// );
+@mixin box-shadow($x-axis: 0.5px, $y-axis: 1px, $blur: 7px, $color: $default) {
+  box-shadow: $x-axis $y-axis $blur $color;
+}
 
 //According to 1.4.12 Text Spacing
 * {
@@ -65,17 +45,37 @@ html {
   scroll-behavior: smooth;
 }
 
+$gradients: () !default;
+$gradients: map-merge(
+  (
+    chill: linear-gradient(135deg, #2f93cc 0%, #09e485 100%),
+    cold: linear-gradient(135deg, #8019c6 0%, #2f93cc 100%)
+  ),
+  $gradients
+);
+
+// Gradient backgrounds
+@mixin bg-gradient($parent, $gradient) {
+  #{$parent} {
+    background: $gradient;
+  }
+}
+
+// Gradient classes
+@each $gradient, $value in $gradients {
+  @include bg-gradient(".bg-gradient-#{$gradient}", $value);
+}
+
 body {
   background-color: $body-bg;
 }
 
-#about {
-    background-color: $body-bg;
-} 
-
 .card {
   margin-bottom: $card-columns-margin;
   height: 96%;
+  &:hover {
+    @include box-shadow(2px, 2px, 3px, rgba(119, 117, 117, 0.897));
+  }
 }
 
 .hero {
@@ -93,7 +93,7 @@ body {
     opacity: 0.3;
   }
   &::after {
-    background-color: #73bacc;
+    background-color: rgba(47, 84, 204, 0.849);
     content: "";
     display: block;
     position: absolute;
@@ -107,59 +107,89 @@ body {
 }
 
 header {
-  height: 100vh;
+  height: 90vh;
+  width: 100%;
 }
 
 .my_projects {
   padding: 3%;
 }
 
-.navbar {
+.portfolio_container {
+  padding-bottom: 5%;
+}
+
+.navbar-light {
   position: sticky;
   position: -webkit-sticky;
   font-size: 23px;
   height: 10%;
-  font-family: 'Bebas Neue', cursive;
-  background-color: #024758;
-
-}
-
-.navpill, #social_top {
-  color: $border-color;
-  &:hover {
-  color: $body-bg;
+  font-family: "Bebas Neue", cursive;
+  color: $body-bg !important;
+  .navpill {
+    color: $body-bg !important;
+    &:hover {
+      color: black;
+    }
   }
 }
 
-#resume_btn, #projects_btn {
+#resume_btn,
+#projects_btn {
   border-radius: $btn-border-radius;
   padding: ($btn-padding-y, $btn-padding-x);
-  /*box-shadow: $btn-box-shadow;*/
+  border-color: $primary;
+  background-color: $primary;
+  text-shadow: $text-shadow;
   &:hover {
-      background-color: rgba(0, 0, 0, 0.7);
-      /*border: ($border-color, $border-width);*/
-      color: $border-color;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: $body-bg;
+    border-color: $border-color;
+  }
+}
+
+.see_more {
+  width: 100%;
+  padding: 3%;
+  background-color: $secondary;
+  border-color: $secondary;
+  text-shadow: $text-shadow;
+  &:hover {
+    color: $secondary;
+    border-color: $secondary;
+    background: $body-bg;
   }
 }
 
 #projects {
-  // height: 100vh;
-  background-color: #f6f8f9;
+  background-color: $body-bg;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-#cv_pdf, #resume_h1 {
+#cv_pdf,
+#resume_h1 {
   display: none;
 }
 
+#cv_pdf,
+.contact_container {
+  margin: 5vh;
+}
+
+footer {
+  padding: 5%;
+}
 
 h2 {
-  overflow: hidden; 
-  border-right: 0.15em solid orange; 
-  white-space: nowrap; 
-  margin: 0 auto; 
-  letter-spacing: 0.15em; 
+  overflow: hidden;
+  border-right: 0.15em solid $primary;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
   animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
-  color: $border-color;
+  color: white;
+  text-shadow:2px 2px 2px black;
 }
 
 /* The typing effect */
@@ -172,32 +202,27 @@ h2 {
   }
 }
 
-#cv_pdf, .contact_container {
-  margin: 5vh;
-}
-
-h1, h3, h5 {
-    font-family: $font-family-sans-serif;
+h1,
+h3,
+h5 {
+  font-family: $font-family-sans-serif;
+  text-shadow: $text-shadow;
 }
 
 .img-fluid {
-    border-radius: 50%; 
+  border-radius: 50%;
 }
 
 .modal-body {
   img {
- width: 100%;
- height: 100%;
+    width: 100%;
+    height: 100%;
   }
-}
-
-.btn {
-  background-color: $primary;
 }
 
 .icons {
   font-size: 4rem;
-  color: #f6f8f9;
+  color: $body-bg;
   padding-bottom: 3%;
 }
 
@@ -208,5 +233,7 @@ h1, h3, h5 {
 
 a {
   color: $border-color;
+  &:hover {
+    color: black;
+  }
 }
-

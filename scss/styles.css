@@ -24,7 +24,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #65b7cc;
+  background-color: #f6f8f9;
 }
 
 [tabindex="-1"]:focus {
@@ -448,7 +448,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #65b7cc;
+  background-color: #f6f8f9;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -2198,7 +2198,7 @@ pre code {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(0, 0, 0, 0.5);
+  color: white;
 }
 
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
@@ -2217,16 +2217,16 @@ pre code {
 }
 
 .navbar-light .navbar-toggler {
-  color: rgba(0, 0, 0, 0.5);
+  color: white;
   border-color: rgba(0, 0, 0, 0.1);
 }
 
 .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .navbar-light .navbar-text {
-  color: rgba(0, 0, 0, 0.5);
+  color: white;
 }
 
 .navbar-light .navbar-text a {
@@ -2562,17 +2562,26 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: #65b7cc;
+.bg-gradient-chill {
+  background: linear-gradient(135deg, #2f93cc 0%, #09e485 100%);
 }
 
-#about {
-  background-color: #65b7cc;
+.bg-gradient-cold {
+  background: linear-gradient(135deg, #8019c6 0%, #2f93cc 100%);
+}
+
+body {
+  background-color: #f6f8f9;
 }
 
 .card {
   margin-bottom: 20px;
   height: 96%;
+}
+
+.card:hover {
+  -webkit-box-shadow: 2px 2px 3px rgba(119, 117, 117, 0.897);
+          box-shadow: 2px 2px 3px rgba(119, 117, 117, 0.897);
 }
 
 .hero::before {
@@ -2590,7 +2599,7 @@ body {
 }
 
 .hero::after {
-  background-color: #73bacc;
+  background-color: rgba(47, 84, 204, 0.849);
   content: "";
   display: block;
   position: absolute;
@@ -2603,59 +2612,95 @@ body {
 }
 
 header {
-  height: 100vh;
+  height: 90vh;
+  width: 100%;
 }
 
 .my_projects {
   padding: 3%;
 }
 
-.navbar {
+.portfolio_container {
+  padding-bottom: 5%;
+}
+
+.navbar-light {
   position: sticky;
   position: -webkit-sticky;
   font-size: 23px;
   height: 10%;
-  font-family: 'Bebas Neue', cursive;
-  background-color: #024758;
+  font-family: "Bebas Neue", cursive;
+  color: #f6f8f9 !important;
 }
 
-.navpill, #social_top {
-  color: #f6f8f9;
+.navbar-light .navpill {
+  color: #f6f8f9 !important;
 }
 
-.navpill:hover, #social_top:hover {
-  color: #65b7cc;
+.navbar-light .navpill:hover {
+  color: black;
 }
 
-#resume_btn, #projects_btn {
+#resume_btn,
+#projects_btn {
   border-radius: 40px;
-  padding: 5%, 10%;
-  /*box-shadow: $btn-box-shadow;*/
+  padding: 15%, 15%;
+  border-color: #f96332;
+  background-color: #f96332;
+  text-shadow: 1px 2px 2px rgba(53, 53, 75, 0.863);
 }
 
-#resume_btn:hover, #projects_btn:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-  /*border: ($border-color, $border-width);*/
+#resume_btn:hover,
+#projects_btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
   color: #f6f8f9;
+  border-color: #f6f8f9;
+}
+
+.see_more {
+  width: 100%;
+  padding: 3%;
+  background-color: #52c8ce;
+  border-color: #52c8ce;
+  text-shadow: 1px 2px 2px rgba(53, 53, 75, 0.863);
+}
+
+.see_more:hover {
+  color: #52c8ce;
+  border-color: #52c8ce;
+  background: #f6f8f9;
 }
 
 #projects {
   background-color: #f6f8f9;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-#cv_pdf, #resume_h1 {
+#cv_pdf,
+#resume_h1 {
   display: none;
+}
+
+#cv_pdf,
+.contact_container {
+  margin: 5vh;
+}
+
+footer {
+  padding: 5%;
 }
 
 h2 {
   overflow: hidden;
-  border-right: 0.15em solid orange;
+  border-right: 0.15em solid #f96332;
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: 0.15em;
   -webkit-animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
           animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
-  color: #f6f8f9;
+  color: white;
+  text-shadow: 2px 2px 2px black;
 }
 
 /* The typing effect */
@@ -2676,12 +2721,11 @@ h2 {
   }
 }
 
-#cv_pdf, .contact_container {
-  margin: 5vh;
-}
-
-h1, h3, h5 {
+h1,
+h3,
+h5 {
   font-family: "Raleway", sans-serif;
+  text-shadow: 1px 2px 2px rgba(53, 53, 75, 0.863);
 }
 
 .img-fluid {
@@ -2691,10 +2735,6 @@ h1, h3, h5 {
 .modal-body img {
   width: 100%;
   height: 100%;
-}
-
-.btn {
-  background-color: #f96332;
 }
 
 .icons {
@@ -2710,5 +2750,9 @@ h1, h3, h5 {
 
 a {
   color: #f6f8f9;
+}
+
+a:hover {
+  color: black;
 }
 /*# sourceMappingURL=styles.css.map */
