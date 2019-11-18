@@ -2553,7 +2553,7 @@ pre code {
 }
 
 * {
-  letter-spacing: 0.12rem;
+  letter-spacing: 0.05rem;
   line-height: 1.5rem;
   word-spacing: 0.16rem;
 }
@@ -2585,7 +2585,7 @@ body {
 }
 
 .hero::before {
-  background-image: url("background.jpg");
+  background-image: url("Background.jpg");
   background-size: cover;
   content: "";
   display: block;
@@ -2730,6 +2730,14 @@ h1,
 h3,
 h5 {
   font-family: "Raleway", sans-serif;
+}
+
+#name {
+  font-size: 7vw;
+}
+
+#fullstack {
+  font-size: 3vw;
 }
 
 .img-fluid {
