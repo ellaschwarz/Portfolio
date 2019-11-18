@@ -80,7 +80,7 @@ body {
 
 .hero {
   &::before {
-    background-image: url("scss/background.jpg");
+    background-image: url("background.jpg");
     background-size: cover;
     content: "";
     display: block;
