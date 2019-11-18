@@ -2585,7 +2585,7 @@ body {
 }
 
 .hero::before {
-  background-image: url("/images/clement-h-95YRwf6CNw8-unsplash.jpg");
+  background-image: url("/images/background.jpg");
   background-size: cover;
   content: "";
   display: block;
