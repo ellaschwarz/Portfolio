@@ -2599,7 +2599,7 @@ body {
 }
 
 .hero::after {
-  background-color: rgba(47, 84, 204, 0.849);
+  background-color: rgba(92, 116, 194, 0.849);
   content: "";
   display: block;
   position: absolute;

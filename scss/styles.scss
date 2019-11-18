@@ -80,7 +80,7 @@ body {
 
 .hero {
   &::before {
-    background-image: url("/images/clement-h-95YRwf6CNw8-unsplash.jpg");
+    background-image: url("images/clement-h-95YRwf6CNw8-unsplash.jpg");
     background-size: cover;
     content: "";
     display: block;
@@ -93,7 +93,7 @@ body {
     opacity: 0.3;
   }
   &::after {
-    background-color: rgba(47, 84, 204, 0.849);
+    background-color: rgba(92, 116, 194, 0.849);
     content: "";
     display: block;
     position: absolute;
